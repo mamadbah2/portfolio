@@ -197,14 +197,14 @@ export const EXPERIENCE = [
 
 export const EDUCATION = [
   { title: "MASTER SECURITE DES SYSTEMES D'INFORMATION", org: "ESP DAKAR", period: "25—26", periodLong: "2025 — 2026 (EN COURS)" },
-  { title: "LICENCE GENIE LOGICIEL, SYSTEMES & RESEAUX", org: "ISM DAKAR", period: "22—25", periodLong: "2022 — 2025" },
-  { title: "PROGRAMME INTENSIF INGENIERIE LOGICIELLE", org: "ZONE01 DAKAR", period: "23—25", periodLong: "2023 — 2025" },
+  { title: "INFORMATIQUE APPLIQUEE — GENIE LOGICIEL, RESEAUX & SYSTEMES", org: "ISM DAKAR", period: "22—25", periodLong: "2022 — 2025" },
+  { title: "PROGRAMME INTENSIF INGENIERIE LOGICIELLE (PEDAGOGIE 42)", org: "ZONE01 DAKAR", period: "23—26", periodLong: "2023 — 2026" },
+  { title: "BACCALAUREAT SERIE SCIENCES MATHEMATIQUES", org: "INST. SAINTE MARIE — CONAKRY", period: "2022", periodLong: "2022" },
 ];
 
 export const CERTS = [
-  { title: "WEB SECURITY FUNDAMENTALS", org: "OWASP TRACK", period: "2024" },
-  { title: "DOCKER & CI/CD PIPELINE", org: "IN-HOUSE", period: "2024" },
-  { title: "ML APPLIED — MALWARE DETECTION", org: "PROJECT CERT", period: "2024" },
+  { title: "CCNA — CISCO CERTIFIED NETWORK ASSOCIATE", org: "CISCO", period: "2024" },
+  { title: "JAVA FULL STACK ENGINEER", org: "ZONE01 DAKAR", period: "2025" },
 ];
 
 export const DEFINITIONS = [
