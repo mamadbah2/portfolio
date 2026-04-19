@@ -66,7 +66,7 @@ export function Tweaks({ tweaks, setTweaks }: { tweaks: TweakState; setTweaks: (
         <div className={`toggle ${tweaks.stress ? 'on' : ''}`} onClick={() => update({ stress: !tweaks.stress })} />
       </div>
       <div style={{ fontSize: 10, opacity: 0.5, marginTop: 4, letterSpacing: '0.1em' }}>
-        &gt; shortcuts: 1-7 nav · M mute · T tweaks
+        &gt; shortcuts: 1-7 nav · M mute · T theme · Y tweaks
       </div>
     </div>
   );

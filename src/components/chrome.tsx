@@ -159,14 +159,25 @@ export function IntensityDial({ value, onChange }: { value: number; onChange: (v
   );
 }
 
+const THEME_COLORS: Record<string, string> = {
+  blue: '#00cfff',
+  green: '#39ff14',
+  amber: '#ffb000',
+  red: '#ff3333',
+  mono: '#d0d0d0',
+};
+
 export function BottomRail({
   goPrev, goNext, goUp, goDown, goHome, onEnter,
   toggleMute, muted, intensity, setIntensity,
+  theme, onTheme,
 }: {
   goPrev: () => void; goNext: () => void; goUp: () => void; goDown: () => void;
   goHome: () => void; onEnter: () => void; toggleMute: () => void;
   muted: boolean; intensity: number; setIntensity: (v: number) => void;
+  theme: string; onTheme: () => void;
 }) {
+  const dotColor = THEME_COLORS[theme] || THEME_COLORS.blue;
   return (
     <div className="bottom-rail">
       <span className="rail-label">SECTION</span>
@@ -177,6 +188,14 @@ export function BottomRail({
       <button className="btn arrow" onClick={() => { audio.click(); goDown(); }}>▼</button>
       <button className="btn" onClick={() => { audio.click(); goHome(); }}>MENU</button>
       <button className="btn enter" onClick={() => { audio.confirm(); onEnter(); }}>ENTER</button>
+      <button
+        className="btn theme-btn"
+        onClick={() => { audio.click(); onTheme(); }}
+        title={`Theme: ${theme.toUpperCase()} — press T to cycle`}
+      >
+        <span className="theme-pill" style={{ background: dotColor, boxShadow: `0 0 6px ${dotColor}, 0 0 10px ${dotColor}` }} />
+        THEME
+      </button>
       <div className="rail-spacer" />
       <span className="rail-label">INTENSITY</span>
       <IntensityDial value={intensity} onChange={setIntensity} />

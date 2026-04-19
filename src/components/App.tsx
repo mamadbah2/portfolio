@@ -6,6 +6,8 @@ import { Tweaks, TWEAK_DEFAULTS, TweakState } from './tweaks';
 import { SECTIONS, PROJECTS } from '@/lib/data';
 import * as audio from './audio';
 
+const THEMES = ['blue', 'green', 'amber', 'red', 'mono'] as const;
+
 export default function App() {
   const [booted, setBooted] = useState(false);
   const [section, setSection] = useState('HOME');
@@ -131,6 +133,15 @@ export default function App() {
     animScroll(scrollRef.current, 90);
   }, [section, selectedProject, projectFocus]);
 
+  const cycleTheme = useCallback(() => {
+    audio.click();
+    setTweaks(t => {
+      const i = THEMES.indexOf(t.theme as typeof THEMES[number]);
+      const next = THEMES[(i === -1 ? 0 : i + 1) % THEMES.length];
+      return { ...t, theme: next };
+    });
+  }, []);
+
   const onEnter = useCallback(() => {
     if (section === 'PROJECTS') {
       if (selectedProject) { setSelectedProject(null); return; }
@@ -161,12 +172,13 @@ export default function App() {
       else if (key === '+' || key === '=') { setIntensity(Math.min(100, intensity + 5)); }
       else if (key === '-' || key === '_') { setIntensity(Math.max(0, intensity - 5)); }
       else if (key === 'm') { setTweaks(t => ({ ...t, sound: !t.sound })); }
-      else if (key === 't') { setShowTweaks(v => !v); }
+      else if (key === 't') { cycleTheme(); }
+      else if (key === 'y') { setShowTweaks(v => !v); }
       else if (key === 'escape') { setSelectedProject(null); }
     };
     window.addEventListener('keydown', h);
     return () => window.removeEventListener('keydown', h);
-  }, [section, selectedProject, projectFocus, intensity, goTo, goPrev, goNext, goUp, goDown, onEnter]);
+  }, [section, selectedProject, projectFocus, intensity, goTo, goPrev, goNext, goUp, goDown, onEnter, cycleTheme]);
 
   const renderScreen = () => {
     switch (section) {
@@ -210,6 +222,8 @@ export default function App() {
             muted={!tweaks.sound}
             intensity={intensity}
             setIntensity={setIntensity}
+            theme={tweaks.theme}
+            onTheme={cycleTheme}
           />
         </div>
         {showTweaks && <Tweaks tweaks={tweaks} setTweaks={setTweaks} />}
