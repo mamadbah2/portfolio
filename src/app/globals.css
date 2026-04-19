@@ -235,14 +235,70 @@ body[data-stress="on"] .lcd{animation:glitchX 0.15s infinite steps(1)}
 .toggle.on::after{left:15px;background:#e8f4ff}
 .glow-pulse{animation:glowPulse 1.6s ease-in-out infinite}
 @keyframes glowPulse{0%,100%{opacity:1}50%{opacity:0.4}}
+/* === SKILLS GRID (class instead of inline style for override) === */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px}
+
+/* === TABLET — 960px === */
 @media (max-width: 960px){
   .hero,.about,.contact,.proj-detail{grid-template-columns:1fr}
+  .hero{height:auto}
+  .hero-right{border-left:none;padding-left:0;border-top:1px solid var(--seg-off);padding-top:14px;grid-template-rows:auto auto auto}
   .projects{grid-template-columns:1fr 1fr}
   .exp-item{grid-template-columns:1fr}
+  .exp-period{font-size:15px}
   .bottombar{grid-template-columns:repeat(3,1fr)}
+  .contact-row{grid-template-columns:80px 1fr auto}
+  /* allow non-scroll screens to overflow on narrow viewports */
+  .screen-body{overflow-y:auto}
+  .hero,.about,.contact{height:auto;min-height:0}
 }
+
+/* === SMALL TABLET — 768px === */
+@media (max-width: 768px){
+  .chassis{padding:clamp(8px,1.5vw,20px)}
+  .pcb{padding:clamp(14px,2vw,28px);gap:clamp(8px,1vw,14px)}
+  .top-rail{gap:10px;padding:3px 8px 8px}
+  .top-rail .brand{font-size:11px}
+  .bottom-rail{gap:8px;padding:5px 8px 3px;flex-wrap:wrap}
+  .rail-label{display:none}
+  .btn{padding:8px 12px;min-width:36px;font-size:9px}
+  .btn.arrow{min-width:32px;padding:8px 10px}
+  .dial{width:40px;height:40px}
+  .skills-grid{grid-template-columns:1fr}
+  .certs{grid-template-columns:1fr}
+  .proj-detail{grid-template-columns:1fr}
+  .contact-row{grid-template-columns:1fr;gap:4px}
+  .contact-row .c{display:none}
+}
+
+/* === MOBILE — 640px === */
 @media (max-width: 640px){
   .projects{grid-template-columns:1fr}
   .bottombar{grid-template-columns:repeat(2,1fr)}
-  .top-rail .pins{display:none}
+  .top-rail .pins,.top-rail .pin-label{display:none}
+  .top-rail{gap:8px}
+  .statusbar .tags{gap:8px;font-size:11px}
+  .statusbar .clock{font-size:14px}
+  .lcd{padding:10px 12px}
+  .hero-title{font-size:clamp(22px,7vw,42px)}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .kpi-cell .kpi-val{font-size:clamp(16px,5vw,24px)}
+  .dial-val{display:none}
+  .bottombar{display:none}
+  .label-small{font-size:9px;letter-spacing:0.1em}
+  .exp-title{font-size:14px}
+  .cert-title{font-size:11px}
+  .skill-row{font-size:9px}
+}
+
+/* === SMALL MOBILE — 420px === */
+@media (max-width: 420px){
+  .chassis{padding:4px}
+  .pcb{padding:10px 8px;border-radius:8px}
+  .top-rail .brand,.top-rail .silk{display:none}
+  .top-rail .led{width:8px;height:8px}
+  .hero{gap:10px}
+  .bottom-rail{gap:5px;padding:4px 6px 2px}
+  .btn{padding:7px 9px;min-width:28px;font-size:8px;letter-spacing:0.08em}
+  .btn.enter{min-width:44px}
 }

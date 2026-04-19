@@ -14,8 +14,9 @@ export function HomeScreen() {
           <Seg14>THAT.SHIP</Seg14>
         </div>
         <div className="hero-sub lit">
-          Senior Full Stack Engineer. React/Node, automatisation, IA appliquee.
-          Je transforme des besoins business en resultats mesurables.
+          Full Stack Engineer. Java/Spring Boot, Angular, React/Next, Go, Rust —
+          Automatisation, IA appliquee, Cybersecurite.
+          Des besoins reels. Des livrables concrets.
         </div>
         <div className="label-small lit" style={{ marginTop: 14, opacity: 0.55 }}>
           ▸ USE PHYSICAL CONTROLS BELOW — ◀ ▶ NAV / ENTER INSPECT
@@ -61,10 +62,11 @@ export function AboutScreen() {
           <Seg14>BOBO.BAH</Seg14>
         </h2>
         <p className="lit">
-          Developpeur Full Stack avec plus de 3 ans d&apos;experience. Je conçois,
-          developpe et optimise des plateformes web orientees usage reel, en
-          combinant execution technique rapide avec une logique produit orientee
-          conversion et performance.
+          Selectionne parmi 100+ a la piscine Zone01 Dakar (pedagogie 42).
+          Tronc commun Go / Rust / JS — specialisation Java Full Stack / Angular / React.
+          30+ projets livres sous contrainte reelle. Bocalien, admin Linux, automatisation.
+          Freelance : e-commerce, IA, automatisation. Master MSSI (securite) en cours.
+          Je construis des systemes solides, securises et orientes resultats concrets.
         </p>
         <div style={{ display: 'flex', gap: 14, marginTop: 4 }}>
           <div className="kpi-cell" style={{ minWidth: 110 }}>
@@ -199,7 +201,7 @@ export function SkillsScreen({ scrollRef }: { scrollRef: RefObject<HTMLDivElemen
     <div style={{ display: 'flex', flexDirection: 'column', gap: 10, height: '100%', minHeight: 0, position: 'relative' }}>
       <div className="label-small lit">▸ COMPETENCY MATRIX — {SKILL_GROUPS.length} GROUPS — ▲ ▼ TO SCROLL</div>
       <div ref={scrollRef} className="scrollable" style={{ flex: 1, minHeight: 0, overflowY: 'auto', overflowX: 'hidden' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px 28px' }}>
+        <div className="skills-grid">
           {SKILL_GROUPS.map(g => (
             <div className="skill-group" key={g.title}>
               <div className="skill-group-title lit">
