@@ -574,7 +574,7 @@ function CRTViewer({ project }: { project: Project }) {
         {phase === 'tuning'
           ? <TuningStatic channel={frameIdx + 1} />
           : shots.length > 0
-            ? <img src={shots[frameIdx]} alt={`${project.title} screenshot ${frameIdx + 1}`} className="crt-img" />
+            ? <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${shots[frameIdx]}`} alt={`${project.title} screenshot ${frameIdx + 1}`} className="crt-img" />
             : <WireframeMockup type={project.mockup} color={project.color} frame={frameIdx} />}
         <div className="crt-scanlines" />
         <div className="crt-vignette" />
