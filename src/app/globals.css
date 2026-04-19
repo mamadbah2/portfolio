@@ -304,42 +304,64 @@ body[data-stress="on"] .lcd{animation:glitchX 0.15s infinite steps(1)}
 }
 
 /* === CRT TV viewer (project detail) === */
-.crt-tv{display:flex;flex-direction:column;gap:6px;align-items:stretch;width:100%}
-.crt-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;opacity:0.55;text-transform:uppercase}
+.crt-tv{
+  display:flex;flex-direction:column;gap:6px;
+  width:100%;max-width:200px;align-self:center;margin-top:6px;
+}
+.crt-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;opacity:0.55;text-transform:uppercase;text-align:center}
 .crt-screen{
-  position:relative;width:100%;aspect-ratio:4/3;background:#000;border-radius:12px;overflow:hidden;
+  position:relative;width:100%;aspect-ratio:4/3;background:#000;border-radius:10px;overflow:hidden;
   border:2px solid #0c0c0c;
   box-shadow:
-    inset 0 0 30px rgba(0,0,0,0.85),
-    inset 0 0 6px rgba(0,0,0,1),
+    inset 0 0 24px rgba(0,0,0,0.9),
+    inset 0 0 4px rgba(0,0,0,1),
     0 0 0 1px rgba(60,60,60,0.6),
-    0 4px 16px rgba(0,0,0,0.6),
-    0 0 18px rgba(0,0,0,0.4);
+    0 4px 14px rgba(0,0,0,0.6),
+    0 0 14px rgba(0,0,0,0.4);
 }
 .crt-scanlines{
   position:absolute;inset:0;pointer-events:none;z-index:10;
-  background:repeating-linear-gradient(0deg,rgba(0,0,0,0) 0,rgba(0,0,0,0) 1px,rgba(0,0,0,0.22) 1px,rgba(0,0,0,0.22) 2px);
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,0) 0,rgba(0,0,0,0) 1px,rgba(0,0,0,0.26) 1px,rgba(0,0,0,0.26) 2px);
   mix-blend-mode:multiply;
 }
 .crt-vignette{
   position:absolute;inset:0;pointer-events:none;z-index:11;
-  background:radial-gradient(ellipse at 50% 50%,transparent 45%,rgba(0,0,0,0.85) 100%);
+  background:radial-gradient(ellipse at 50% 50%,transparent 42%,rgba(0,0,0,0.88) 100%);
 }
 .crt-sweep{
-  position:absolute;top:0;left:0;width:5px;height:100%;z-index:4;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.85),transparent);
+  position:absolute;top:0;left:0;width:4px;height:100%;z-index:4;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.8),transparent);
   filter:blur(1px);
-  animation:tuning-sweep 0.7s linear infinite;
+  animation:tuning-sweep 0.6s linear infinite;
 }
 .crt-rolling{
   position:absolute;inset:0;z-index:5;pointer-events:none;
-  background:repeating-linear-gradient(0deg,rgba(0,180,255,0.06) 0,rgba(0,180,255,0.06) 1px,transparent 1px,transparent 5px);
-  animation:rolling-scan 0.12s linear infinite;
+  background:repeating-linear-gradient(0deg,rgba(200,200,255,0.08) 0,rgba(200,200,255,0.08) 1px,transparent 1px,transparent 4px);
+  animation:rolling-scan 0.09s linear infinite;
+}
+.crt-vhold{
+  position:absolute;left:-2%;right:-2%;height:24%;z-index:6;pointer-events:none;
+  background:linear-gradient(180deg,
+    transparent 0%,
+    rgba(0,0,0,0.35) 30%,
+    rgba(0,0,0,0.7) 48%,
+    rgba(255,255,255,0.12) 52%,
+    rgba(0,0,0,0.55) 58%,
+    rgba(0,0,0,0.2) 75%,
+    transparent 100%);
+  animation:vhold-sweep 2.6s linear infinite;
+  filter:blur(0.5px);
+}
+.crt-flicker{
+  position:absolute;inset:0;z-index:7;pointer-events:none;
+  background:rgba(255,255,255,0.03);
+  animation:crt-flicker 0.11s steps(2) infinite;
+  mix-blend-mode:overlay;
 }
 .crt-caption{
-  position:absolute;bottom:8px;left:10px;z-index:12;
-  font-family:var(--font-mono);font-size:9px;letter-spacing:0.15em;
-  color:rgba(255,255,255,0.85);text-shadow:0 0 6px rgba(255,255,255,0.5);
+  position:absolute;bottom:6px;left:8px;z-index:12;
+  font-family:var(--font-mono);font-size:8px;letter-spacing:0.14em;
+  color:rgba(255,255,255,0.88);text-shadow:0 0 5px rgba(255,255,255,0.6);
 }
 .crt-dots{display:flex;gap:5px;align-items:center;justify-content:center;padding-top:2px}
 .crt-dot{width:5px;height:5px;border-radius:50%;background:var(--seg-off);transition:background 0.3s,box-shadow 0.3s}
@@ -351,7 +373,15 @@ body[data-stress="on"] .lcd{animation:glitchX 0.15s infinite steps(1)}
 }
 @keyframes rolling-scan{
   0%{background-position:0 0}
-  100%{background-position:0 5px}
+  100%{background-position:0 4px}
+}
+@keyframes vhold-sweep{
+  0%{top:-30%}
+  100%{top:110%}
+}
+@keyframes crt-flicker{
+  0%,100%{opacity:0.25}
+  50%{opacity:0.85}
 }
 
 /* === Theme button (BottomRail) === */

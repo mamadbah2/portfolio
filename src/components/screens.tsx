@@ -7,20 +7,39 @@ type Project = typeof PROJECTS[number];
 
 function TuningStatic({ channel }: { channel: number }) {
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#000', overflow: 'hidden' }}>
+    <div style={{ position: 'absolute', inset: 0, background: '#060606', overflow: 'hidden' }}>
+      {/* Chunky B&W snow base */}
       <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, display: 'block' }} preserveAspectRatio="none">
         <defs>
-          <filter id="crt-noise" x="0" y="0" width="100%" height="100%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.9 0.95" numOctaves="2" stitchTiles="stitch">
-              <animate attributeName="seed" from="0" to="100" dur="0.18s" repeatCount="indefinite" />
+          <filter id="crt-snow" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="3" stitchTiles="stitch">
+              <animate attributeName="seed" from="0" to="200" dur="0.12s" repeatCount="indefinite" />
             </feTurbulence>
-            <feColorMatrix type="saturate" values="0" />
+            <feColorMatrix type="matrix" values="1.4 0 0 0 -0.15  0 1.4 0 0 -0.15  0 0 1.4 0 -0.15  0 0 0 1 0" />
           </filter>
         </defs>
-        <rect width="100%" height="100%" filter="url(#crt-noise)" opacity="0.85" />
+        <rect width="100%" height="100%" filter="url(#crt-snow)" opacity="0.95" />
       </svg>
+      {/* Faint color speckle overlay (warm/cool cast) */}
+      <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, display: 'block', mixBlendMode: 'screen', opacity: 0.25 }} preserveAspectRatio="none">
+        <defs>
+          <filter id="crt-color" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch">
+              <animate attributeName="seed" from="10" to="110" dur="0.22s" repeatCount="indefinite" />
+            </feTurbulence>
+            <feColorMatrix type="matrix" values="2.5 0 0 0 -0.3  0.2 0.4 0 0 -0.1  0 0 1.8 0 -0.2  0 0 0 0.8 0" />
+          </filter>
+        </defs>
+        <rect width="100%" height="100%" filter="url(#crt-color)" />
+      </svg>
+      {/* V-hold dark band sweeping vertically (classic 80s out-of-sync wave) */}
+      <div className="crt-vhold" />
+      {/* Fast vertical tuning sweep */}
       <div className="crt-sweep" />
+      {/* Rolling horizontal scanlines */}
       <div className="crt-rolling" />
+      {/* Screen flicker */}
+      <div className="crt-flicker" />
       <div className="crt-caption">▸ TUNING CH.{String(channel).padStart(2, '0')}...</div>
     </div>
   );
