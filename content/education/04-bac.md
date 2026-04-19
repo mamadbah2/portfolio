@@ -1,0 +1,6 @@
+---
+title: BACCALAUREAT SERIE SCIENCES MATHEMATIQUES
+org: INST. SAINTE MARIE — CONAKRY
+period: "2022"
+periodLong: "2022"
+---
