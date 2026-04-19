@@ -4,11 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "predev": "npm run build:content",
     "build": "next build",
+    "prebuild": "npm run build:content",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:content": "node scripts/build-content.mjs",
+    "new:project": "node scripts/new-item.mjs project",
+    "new:job": "node scripts/new-item.mjs experience",
+    "new:cert": "node scripts/new-item.mjs cert",
+    "new:edu": "node scripts/new-item.mjs education"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4"

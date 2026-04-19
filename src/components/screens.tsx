@@ -540,9 +540,10 @@ function WireframeMockup({ type, color, frame }: { type: string; color: string; 
 }
 
 function CRTViewer({ project }: { project: Project }) {
+  const shots = project.screenshots ?? [];
+  const FRAMES = shots.length > 0 ? shots.length : 3;
   const [phase, setPhase] = useState<'tuning' | 'stable'>('tuning');
   const [frameIdx, setFrameIdx] = useState(0);
-  const FRAMES = 3;
 
   useEffect(() => {
     setPhase('tuning');
@@ -562,7 +563,7 @@ function CRTViewer({ project }: { project: Project }) {
       setPhase('tuning');
     }, 3200);
     return () => clearTimeout(t);
-  }, [phase]);
+  }, [phase, FRAMES]);
 
   return (
     <div className="crt-tv">
@@ -572,7 +573,9 @@ function CRTViewer({ project }: { project: Project }) {
       <div className="crt-screen">
         {phase === 'tuning'
           ? <TuningStatic channel={frameIdx + 1} />
-          : <WireframeMockup type={project.mockup} color={project.color} frame={frameIdx} />}
+          : shots.length > 0
+            ? <img src={shots[frameIdx]} alt={`${project.title} screenshot ${frameIdx + 1}`} className="crt-img" />
+            : <WireframeMockup type={project.mockup} color={project.color} frame={frameIdx} />}
         <div className="crt-scanlines" />
         <div className="crt-vignette" />
       </div>

@@ -1,0 +1,6 @@
+---
+title: INFORMATIQUE APPLIQUEE — GENIE LOGICIEL, RESEAUX & SYSTEMES
+org: ISM DAKAR
+period: "22—25"
+periodLong: 2022 — 2025
+---

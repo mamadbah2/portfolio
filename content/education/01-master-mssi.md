@@ -1,0 +1,6 @@
+---
+title: MASTER SECURITE DES SYSTEMES D'INFORMATION
+org: ESP DAKAR
+period: "25—26"
+periodLong: 2025 — 2026 (EN COURS)
+---

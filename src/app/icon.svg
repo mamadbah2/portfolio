@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <filter id="phosphor" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="0.7"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="screen" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#003a10"/>
+      <stop offset="80%" stop-color="#001505"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+
+  <!-- TV stand -->
+  <rect x="26" y="54" width="12" height="3" fill="#1a1a1a"/>
+  <rect x="20" y="56" width="24" height="3" rx="1" fill="#0a0a0a"/>
+
+  <!-- CRT bezel -->
+  <rect x="4" y="6" width="56" height="48" rx="9" fill="#1a1a1a"/>
+  <rect x="5" y="7" width="54" height="46" rx="8" fill="none" stroke="#2a2a2a" stroke-width="0.6"/>
+
+  <!-- Screen recess -->
+  <rect x="9" y="11" width="46" height="38" rx="5" fill="#000"/>
+  <rect x="10" y="12" width="44" height="36" rx="4" fill="url(#screen)"/>
+
+  <!-- Phosphor pixel pattern (echoes the preview the user picked: █░█ / ░█░) -->
+  <g fill="#39ff14" filter="url(#phosphor)">
+    <rect x="20" y="24" width="6" height="6" rx="1"/>
+    <rect x="38" y="24" width="6" height="6" rx="1"/>
+    <rect x="29" y="33" width="6" height="6" rx="1"/>
+  </g>
+
+  <!-- Scanlines -->
+  <g stroke="#000" stroke-width="0.6" opacity="0.55">
+    <line x1="10" y1="16" x2="54" y2="16"/>
+    <line x1="10" y1="20" x2="54" y2="20"/>
+    <line x1="10" y1="24" x2="54" y2="24"/>
+    <line x1="10" y1="28" x2="54" y2="28"/>
+    <line x1="10" y1="32" x2="54" y2="32"/>
+    <line x1="10" y1="36" x2="54" y2="36"/>
+    <line x1="10" y1="40" x2="54" y2="40"/>
+    <line x1="10" y1="44" x2="54" y2="44"/>
+  </g>
+
+  <!-- Vignette -->
+  <rect x="10" y="12" width="44" height="36" rx="4" fill="none" stroke="#000" stroke-width="2.5" opacity="0.45"/>
+
+  <!-- Power LED -->
+  <circle cx="51" cy="50" r="0.9" fill="#39ff14" filter="url(#phosphor)"/>
+</svg>
