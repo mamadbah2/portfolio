@@ -41,6 +41,7 @@ export const PROJECTS = [
     solution: "4 microservices Spring Boot dedies, Neo4j pour les algorithmes de graphes (parcours, similarite, clustering), authentification OAuth2/2FA, front Angular, deploiement Docker.",
     value: "Recommandation en temps reel via graphes — architecture propre, securisee et extensible.",
     metric: { v: 4, u: "MICROSERVICES" },
+    color: "#7c3aed", mockup: "dashboard",
   },
   {
     id: 2, code: "02",
@@ -52,6 +53,7 @@ export const PROJECTS = [
     solution: "Catalogue produit avec filtres, tunnel checkout optimise, back-office vendeur et admin, pricing par volume automatique, dashboards KPI temps-reel.",
     value: "Produit oriente conversion, adopte comme outil operationnel quotidien.",
     metric: { v: 3, u: "ROLES" },
+    color: "#2563eb", mockup: "ecommerce",
   },
   {
     id: 3, code: "03",
@@ -63,6 +65,7 @@ export const PROJECTS = [
     solution: "Backend Go, webhooks WhatsApp entrants/sortants, collecte de donnees structuree, reporting KPI automatise sur Google Sheets.",
     value: "35h/semaine de taches manuelles eliminees. Meilleure visibilite operationnelle terrain en temps reel.",
     metric: { v: 35, u: "HOURS/WEEK" },
+    color: "#16a34a", mockup: "terminal",
   },
   {
     id: 4, code: "04",
@@ -74,6 +77,7 @@ export const PROJECTS = [
     solution: "Pipeline ML complet : preparation des donnees, entrainement (SVM, Random Forest, KNN), optimisation GridSearchCV, interface d'inference Streamlit pour analyse de fichiers PE.",
     value: "94% de precision. Demonstration concrète d'IA appliquee a la securite — projet de master validé.",
     metric: { v: 94, u: "ACCURACY.%" },
+    color: "#dc2626", mockup: "dashboard",
   },
   {
     id: 5, code: "05",
@@ -85,6 +89,7 @@ export const PROJECTS = [
     solution: "Backend Go avec API REST + WebSocket, front Next.js, gestion des profils/posts/notifications temps reel, packaging AppImage pour distribution cross-platform.",
     value: "Stack Go+Next coherent de bout en bout — distribution native Linux via AppImage, valide en peer-review Zone01.",
     metric: { v: 1, u: "APPIMAGE" },
+    color: "#0891b2", mockup: "social",
   },
   {
     id: 6, code: "06",
@@ -96,6 +101,7 @@ export const PROJECTS = [
     solution: "Moteur de jeu Rust, architecture client-serveur, WebSocket pour synchronisation des positions/actions en temps reel, gestion du state distribue et de la concurrence.",
     value: "Maitrise Rust bas niveau, networking temps reel et concurrence — projet de prestige du tronc commun Zone01.",
     metric: { v: 60, u: "FPS.TARGET" },
+    color: "#d97706", mockup: "game",
   },
 ];
 
