@@ -1,3 +1,4 @@
+'use client';
 import Hero from './Hero';
 import Bio from './Bio';
 import Projects from './Projects';
@@ -6,10 +7,15 @@ import Skills from './Skills';
 import Education from './Education';
 import Contact from './Contact';
 import Footer from './Footer';
+import CursorLens from './webgl/CursorLens';
+import LenisProvider from './scroll/LenisProvider';
+import { useGsapScrollChoreography } from './scroll/useGsapScrollChoreography';
 
 export default function Pro() {
+  useGsapScrollChoreography();
   return (
-    <>
+    <LenisProvider>
+      <CursorLens />
       <Hero />
       <Bio />
       <Projects />
@@ -18,6 +24,6 @@ export default function Pro() {
       <Education />
       <Contact />
       <Footer />
-    </>
+    </LenisProvider>
   );
 }

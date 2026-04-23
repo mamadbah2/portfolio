@@ -18,7 +18,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mamadou Bobo Bah — Senior Full Stack Engineer · Dakar",
+  title: "Mamadou Bobo Bah — Full Stack Engineer Confirmé · Dakar",
   description: "Portfolio éditorial. Java, Spring, React, Go. 30+ projets livrés. Basé à Dakar.",
   icons: { icon: "/icon.svg" },
 };

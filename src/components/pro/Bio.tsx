@@ -1,11 +1,8 @@
-'use client';
 import { DEFINITIONS, IDENTITY } from '@/lib/data';
-import { useInView } from './hooks/useInView';
 
 export default function Bio() {
-  const { ref, inView } = useInView<HTMLElement>();
   return (
-    <section ref={ref} className={`pro-bio ${inView ? 'is-in' : ''}`} aria-labelledby="bio-title">
+    <section className="pro-bio" aria-labelledby="bio-title">
       <div className="pro-section-rail">
         <span className="pro-section-num">01</span>
         <h2 id="bio-title" className="pro-section-title">À propos</h2>
@@ -24,7 +21,7 @@ export default function Bio() {
             et une obsession modérée pour l&apos;automatisation de tout ce qui s&apos;automatise.
           </p>
           <p className="pro-bio-tagline">
-            Disponible pour missions freelance ou opportunités senior.
+            Disponible pour missions freelance ou postes confirmés.
           </p>
         </div>
 

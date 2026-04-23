@@ -1,11 +1,8 @@
-'use client';
 import { SKILL_GROUPS } from '@/lib/data';
-import { useInView } from './hooks/useInView';
 
 export default function Skills() {
-  const { ref, inView } = useInView<HTMLElement>();
   return (
-    <section ref={ref} className={`pro-skills ${inView ? 'is-in' : ''}`} aria-labelledby="skills-title">
+    <section className="pro-skills" aria-labelledby="skills-title">
       <div className="pro-section-rail">
         <span className="pro-section-num">04</span>
         <h2 id="skills-title" className="pro-section-title">Compétences</h2>
