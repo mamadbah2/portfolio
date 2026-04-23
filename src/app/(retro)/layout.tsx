@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, VT323 } from "next/font/google";
-import "./globals.css";
+import ExperienceSwitch from "@/components/shared/ExperienceSwitch";
+import "./retro.css";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -15,14 +16,18 @@ const vt323 = VT323({
 });
 
 export const metadata: Metadata = {
-  title: "Mamadou Bobo Bah — Senior Full Stack Engineer",
-  description: "Portfolio de Mamadou Bobo Bah, Senior Full Stack Engineer basé à Dakar. React/Next.js, Node.js, automatisation, IA appliquée.",
+  title: "Mamadou Bobo Bah · Retro Console",
+  description: "MBB/OS v3.2 — console retro LCD/PCB. Portfolio full-stack.",
+  icons: { icon: "/icon.svg" },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RetroRootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={`${jetbrainsMono.className} ${vt323.className} h-full`}>
-      <body className="h-full">{children}</body>
+      <body className="retro h-full">
+        {children}
+        <ExperienceSwitch variant="retro" />
+      </body>
     </html>
   );
 }

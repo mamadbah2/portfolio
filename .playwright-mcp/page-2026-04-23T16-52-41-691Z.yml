@@ -1,0 +1,17 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - generic: M.B.B.
+    - generic: DAKAR · SENEGAL · 2026
+  - main [ref=e2]:
+    - link "Enter retro console experience" [ref=e3] [cursor=pointer]:
+      - /url: /retro/
+      - text: PORT:A — RETRO CONSOLE
+      - generic [ref=e15]: BUILD.PRODUCTS.THAT.SHIP
+      - generic [ref=e16]: ▸ BOOT SYSTEM
+    - link "Enter editorial experience" [ref=e17] [cursor=pointer]:
+      - /url: /pro/
+      - text: PORT:B — EDITORIAL
+      - generic: M
+      - text: The editorial side. Typo, blanc, air. Fullstack engineer · 2026.
+      - generic [ref=e18]: Enter →
+  - alert [ref=e19]
