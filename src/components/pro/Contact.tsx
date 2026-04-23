@@ -1,11 +1,8 @@
-'use client';
 import { IDENTITY } from '@/lib/data';
-import { useInView } from './hooks/useInView';
 
 export default function Contact() {
-  const { ref, inView } = useInView<HTMLElement>();
   return (
-    <section ref={ref} className={`pro-contact ${inView ? 'is-in' : ''}`} aria-labelledby="contact-title">
+    <section className="pro-contact" aria-labelledby="contact-title">
       <div className="pro-section-rail">
         <span className="pro-section-num">06</span>
         <h2 id="contact-title" className="pro-section-title">Contact</h2>
@@ -13,7 +10,7 @@ export default function Contact() {
 
       <div className="pro-contact-body">
         <p className="pro-contact-lede">
-          Un projet à faire aboutir, une mission freelance, un poste senior —
+          Un projet à faire aboutir, une mission freelance, un poste confirmé —
           la meilleure façon de me joindre, c&apos;est l&apos;email.
         </p>
 
