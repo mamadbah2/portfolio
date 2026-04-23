@@ -43,3 +43,8 @@ next-env.d.ts
 CLAUDE.md
 .claude/
 AGENTS.md
+.superpowers/
+
+# dev / QA artifacts at repo root (Playwright snapshots, manual screenshots, MCP logs)
+/*.png
+.playwright-mcp/

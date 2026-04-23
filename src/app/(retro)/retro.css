@@ -396,3 +396,46 @@ body[data-stress="on"] .lcd{animation:glitchX 0.15s infinite steps(1)}
   display:inline-block;width:8px;height:8px;border-radius:50%;
   flex-shrink:0;transition:background 0.3s,box-shadow 0.3s;
 }
+
+/* === Experience switch (retro variant) === */
+.xp-switch-retro{
+  position:fixed;top:12px;right:12px;z-index:600;
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 12px;
+  font-family:var(--font-mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;
+  color:#78f576;
+  background:rgba(5,20,10,0.78);
+  border:1px solid rgba(120,245,120,0.35);
+  border-radius:3px;
+  text-decoration:none;
+  box-shadow:0 0 0 1px rgba(0,0,0,0.5),0 4px 14px rgba(0,0,0,0.4),inset 0 0 12px rgba(120,245,120,0.06);
+  backdrop-filter:blur(4px);
+  transition:background 0.2s,box-shadow 0.2s,border-color 0.2s;
+  cursor:pointer;
+  text-shadow:0 0 6px rgba(120,245,120,0.45);
+}
+.xp-switch-retro:hover,.xp-switch-retro:focus-visible{
+  background:rgba(10,40,20,0.88);
+  border-color:rgba(120,245,120,0.7);
+  box-shadow:0 0 0 1px rgba(0,0,0,0.5),0 0 18px rgba(120,245,120,0.2),inset 0 0 12px rgba(120,245,120,0.12);
+  outline:none;
+}
+.xp-switch-retro .xp-switch-icon{
+  display:inline-block;font-family:var(--font-mono);
+  transition:transform 0.3s ease-out;
+}
+.xp-switch-retro:hover .xp-switch-icon,.xp-switch-retro:focus-visible .xp-switch-icon{transform:rotate(90deg)}
+.xp-switch-retro .xp-switch-short{display:inline}
+.xp-switch-retro .xp-switch-full{
+  overflow:hidden;max-width:0;
+  transition:max-width 0.3s ease-out;
+  white-space:nowrap;
+}
+.xp-switch-retro:hover .xp-switch-short,.xp-switch-retro:focus-visible .xp-switch-short{display:none}
+.xp-switch-retro:hover .xp-switch-full,.xp-switch-retro:focus-visible .xp-switch-full{max-width:260px}
+@media (max-width:480px){
+  .xp-switch-retro{top:8px;right:8px;padding:6px 9px;font-size:9px;letter-spacing:0.16em}
+}
+@media (prefers-reduced-motion: reduce){
+  .xp-switch-retro,.xp-switch-retro *{transition:none !important}
+}
